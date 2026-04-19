@@ -16,6 +16,11 @@
 //       렌더링마다 새 배열이 생성되는 것을 막고, 탭 목록 변경 시 단일 지점만 수정한다. (SSOT)
 const TABS = ['daily', 'weekly', 'monthly'];
 
+// [Why] 모듈 최상단에서 BASE_URL을 고정 변수로 캡처하는 이유:
+//       Vite가 빌드 시 import.meta.env.BASE_URL을 정적 문자열로 치환하여
+//       GitHub Pages 서브 디렉토리 경로에서 이미지가 올바르게 로드된다.
+const BASE = import.meta.env.BASE_URL;
+
 /**
  * @component ProfileCard
  * @param {('daily'|'weekly'|'monthly')} timeframe        - 현재 활성화된 시간대
@@ -50,7 +55,7 @@ export default function ProfileCard({ timeframe, onTimeframeChange }) {
                   아바타가 공중에 떠 있는 입체감(depth)을 시안과 동일하게 표현한다.
         */}
         <img
-          src={`${import.meta.env.BASE_URL}images/image-jeremy.png`}
+          src={`${BASE}images/image-jeremy.png`}
           alt="Jeremy Robson 프로필 사진"
           className="
             w-[64px] h-[64px] rounded-full border-[3px] border-white

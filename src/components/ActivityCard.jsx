@@ -36,6 +36,11 @@ const fmt = (n) => `${n}hr${n !== 1 ? 's' : ''}`;
 
 // =============================================================================
 
+// [Why] 모듈 최상단에서 BASE_URL을 고정 변수로 캡처하는 이유:
+//       Vite가 빌드 시 import.meta.env.BASE_URL을 정적 문자열로 치환하여
+//       GitHub Pages 서브 디렉토리 경로에서 이미지가 올바르게 로드된다.
+const BASE = import.meta.env.BASE_URL;
+
 /**
  * @component ActivityCard
  * @param {object}                       activity   - activities.js에서 가공된 활동 데이터
@@ -118,7 +123,7 @@ export default function ActivityCard({ activity, timeframe }) {
             className="text-navy-200 transition-colors duration-200 flex items-center lg:hover:text-white"
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/icon-ellipsis.svg`}
+              src={`${BASE}images/icon-ellipsis.svg`}
               alt=""
               aria-hidden="true"
               className="w-[21px] md:w-[12px] lg:w-[21px] transition-all lg:hover:brightness-150"
