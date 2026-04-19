@@ -17,20 +17,20 @@ export default function ActivityCard({ activity, timeframe }) {
       aria-label={`${title} 활동 카드`}
     >
       {/* 상단 컬러 모자 레이어 */}
-      <div className={`${colorClass} h-[38px] relative overflow-hidden`}>
+      <div className={`${colorClass} h-[76px] relative overflow-hidden`}>
         <img
           src={icon}
           alt=""
           aria-hidden="true"
-          className="absolute -top-3 right-4 w-[79px] h-[79px] opacity-75 object-contain"
+          className="absolute -top-3 right-4 w-[78px] h-[78px] opacity-75 object-contain"
         />
       </div>
 
       {/* 본문 레이어 (네이비 카드, 모자 위로 올라옴) */}
-      <div className="bg-navy-900 hover:bg-navy-800 transition-colors duration-200 rounded-t-2xl -mt-4 relative z-10 p-6">
+      <div className="bg-navy-900 hover:bg-navy-800 transition-colors duration-200 rounded-t-2xl -mt-[38px] relative z-10 p-6 h-[122px] lg:h-auto lg:p-8">
 
         {/* 타이틀 + 쩜쩜쩜 버튼 */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-2 lg:mb-6">
           <h2 className="text-white font-medium text-lg">{title}</h2>
           <button
             aria-label={`${title} 더 보기`}
@@ -50,7 +50,7 @@ export default function ActivityCard({ activity, timeframe }) {
           <p className="text-white text-[2rem] font-light leading-none">
             {fmt(current)}
           </p>
-          <p className="text-navy-200 text-sm font-normal">
+          <p className="text-navy-200 text-[15px] leading-[18px] font-normal">
             {prevLabel} - {fmt(previous)}
           </p>
         </div>
