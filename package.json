@@ -1,0 +1,34 @@
+{
+  "name": "time_tracking_dashboard",
+  "version": "1.0.0",
+  "description": "![Design preview for the Time tracking dashboard coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kisu-seo/time_tracking_dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kisu-seo/time_tracking_dashboard/issues"
+  },
+  "homepage": "https://github.com/kisu-seo/time_tracking_dashboard#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "vite": "^8.0.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.19"
+  }
+}
