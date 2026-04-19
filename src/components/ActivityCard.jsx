@@ -27,10 +27,10 @@ export default function ActivityCard({ activity, timeframe }) {
       </div>
 
       {/* 본문 레이어 (네이비 카드, 모자 위로 올라옴) */}
-      <div className="bg-navy-900 hover:bg-navy-800 transition-colors duration-200 rounded-t-2xl -mt-[38px] relative z-10 p-6 h-[122px] lg:h-auto lg:p-8">
+      <div className="bg-navy-900 hover:bg-navy-800 transition-colors duration-200 rounded-t-2xl -mt-[38px] md:-mt-[42px] relative z-10 p-6 h-[122px] md:h-[180px] lg:h-auto lg:p-8">
 
         {/* 타이틀 + 쩜쩜쩜 버튼 */}
-        <div className="flex items-center justify-between mb-2 lg:mb-6">
+        <div className="flex items-center justify-between mb-2 md:mb-4 lg:mb-6">
           <h2 className="text-white font-medium text-lg">{title}</h2>
           <button
             aria-label={`${title} 더 보기`}
@@ -40,14 +40,14 @@ export default function ActivityCard({ activity, timeframe }) {
               src="/images/icon-ellipsis.svg"
               alt=""
               aria-hidden="true"
-              className="w-[21px]"
+              className="w-[21px] md:w-[12px] hover:brightness-150 transition-all"
             />
           </button>
         </div>
 
         {/* 현재 시간 + 이전 기간 텍스트 */}
-        <div className="flex items-center justify-between lg:flex-col lg:items-start lg:gap-2">
-          <p className="text-white text-[2rem] font-light leading-none">
+        <div className="flex items-center justify-between md:flex-col md:items-start lg:gap-2">
+          <p className="text-white text-[2rem] md:text-[56px] md:leading-[66px] md:mb-2 font-light leading-none">
             {fmt(current)}
           </p>
           <p className="text-navy-200 text-[15px] leading-[18px] font-normal">
