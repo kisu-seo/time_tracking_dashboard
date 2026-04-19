@@ -36,15 +36,10 @@ const fmt = (n) => `${n}hr${n !== 1 ? 's' : ''}`;
 
 // =============================================================================
 
-// [Why] 모듈 최상단에서 BASE_URL을 고정 변수로 캡처하는 이유:
-//       Vite가 빌드 시 import.meta.env.BASE_URL을 정적 문자열로 치환하여
-//       GitHub Pages 서브 디렉토리 경로에서 이미지가 올바르게 로드된다.
-const BASE = import.meta.env.BASE_URL;
-
-// [Why] BASE_URL은 항상 '/'로 끝나고, icon 경로는 '/'로 시작한다.
-//       단순히 ${BASE}${icon}으로 이어 붙이면 '//' 슬래시가 중복된다.
-// [How] icon 경로 앞의 '/'를 제거한 뒤 BASE와 결합하여 항상 유효한 단일 경로를 반환한다.
-const resolvePublicPath = (path) => `${BASE}${path.replace(/^\//, '')}`;
+// [Why] 이앨지를 문자열 경로가 아닌 ES Module import로 불러오는 이유:
+//       Vite가 빌드 시 base 경로를 자동 적용하여 GitHub Pages 등 서브 디렉토리 배포 시에도
+//       항상 올바른 URL이 생성된다. (문자열 경로는 base 설정을 반영하지 않음)
+import ellipsisIcon from '../assets/images/icon-ellipsis.svg';
 
 /**
  * @component ActivityCard
@@ -80,7 +75,7 @@ export default function ActivityCard({ activity, timeframe }) {
       */}
       <div className={`${colorClass} h-[76px] relative overflow-hidden`}>
         <img
-          src={resolvePublicPath(icon)}
+          src={icon}
           alt=""
           aria-hidden="true"
           className="absolute -top-3 right-4 w-[78px] h-[78px] opacity-75 object-contain"
@@ -128,7 +123,7 @@ export default function ActivityCard({ activity, timeframe }) {
             className="text-navy-200 transition-colors duration-200 flex items-center lg:hover:text-white"
           >
             <img
-              src={`${BASE}images/icon-ellipsis.svg`}
+              src={ellipsisIcon}
               alt=""
               aria-hidden="true"
               className="w-[21px] md:w-[12px] lg:w-[21px] transition-all lg:hover:brightness-150"
