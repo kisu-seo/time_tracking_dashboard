@@ -18,15 +18,13 @@ import rawData from '../../data.json';
 //       (예: `bg-${name}` 형태는 빌드 시 트리쉐이킹으로 제거될 수 있음)
 // [How] tailwind.config.js의 커스텀 색상 키(work, play 등)와 1:1 대응한다.
 // -----------------------------------------------------------------------------
-const BASE = import.meta.env.BASE_URL;
-
 const THEME_MAP = {
-  'Work':      { colorClass: 'bg-work',      icon: `${BASE}images/icon-work.svg` },
-  'Play':      { colorClass: 'bg-play',      icon: `${BASE}images/icon-play.svg` },
-  'Study':     { colorClass: 'bg-study',     icon: `${BASE}images/icon-study.svg` },
-  'Exercise':  { colorClass: 'bg-exercise',  icon: `${BASE}images/icon-exercise.svg` },
-  'Social':    { colorClass: 'bg-social',    icon: `${BASE}images/icon-social.svg` },
-  'Self Care': { colorClass: 'bg-self-care', icon: `${BASE}images/icon-self-care.svg` },
+  'Work':      { colorClass: 'bg-work',      icon: '/images/icon-work.svg' },
+  'Play':      { colorClass: 'bg-play',      icon: '/images/icon-play.svg' },
+  'Study':     { colorClass: 'bg-study',     icon: '/images/icon-study.svg' },
+  'Exercise':  { colorClass: 'bg-exercise',  icon: '/images/icon-exercise.svg' },
+  'Social':    { colorClass: 'bg-social',    icon: '/images/icon-social.svg' },
+  'Self Care': { colorClass: 'bg-self-care', icon: '/images/icon-self-care.svg' },
 };
 
 // -----------------------------------------------------------------------------

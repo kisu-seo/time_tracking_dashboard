@@ -41,6 +41,11 @@ const fmt = (n) => `${n}hr${n !== 1 ? 's' : ''}`;
 //       GitHub Pages 서브 디렉토리 경로에서 이미지가 올바르게 로드된다.
 const BASE = import.meta.env.BASE_URL;
 
+// [Why] BASE_URL은 항상 '/'로 끝나고, icon 경로는 '/'로 시작한다.
+//       단순히 ${BASE}${icon}으로 이어 붙이면 '//' 슬래시가 중복된다.
+// [How] icon 경로 앞의 '/'를 제거한 뒤 BASE와 결합하여 항상 유효한 단일 경로를 반환한다.
+const resolvePublicPath = (path) => `${BASE}${path.replace(/^\//, '')}`;
+
 /**
  * @component ActivityCard
  * @param {object}                       activity   - activities.js에서 가공된 활동 데이터
@@ -75,7 +80,7 @@ export default function ActivityCard({ activity, timeframe }) {
       */}
       <div className={`${colorClass} h-[76px] relative overflow-hidden`}>
         <img
-          src={icon}
+          src={resolvePublicPath(icon)}
           alt=""
           aria-hidden="true"
           className="absolute -top-3 right-4 w-[78px] h-[78px] opacity-75 object-contain"
