@@ -50,7 +50,7 @@ export default function ProfileCard({ timeframe, onTimeframeChange }) {
                   아바타가 공중에 떠 있는 입체감(depth)을 시안과 동일하게 표현한다.
         */}
         <img
-          src="/images/image-jeremy.png"
+          src={`${import.meta.env.BASE_URL}images/image-jeremy.png`}
           alt="Jeremy Robson 프로필 사진"
           className="
             w-[64px] h-[64px] rounded-full border-[3px] border-white

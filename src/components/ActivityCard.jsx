@@ -118,7 +118,7 @@ export default function ActivityCard({ activity, timeframe }) {
             className="text-navy-200 transition-colors duration-200 flex items-center lg:hover:text-white"
           >
             <img
-              src="/images/icon-ellipsis.svg"
+              src={`${import.meta.env.BASE_URL}images/icon-ellipsis.svg`}
               alt=""
               aria-hidden="true"
               className="w-[21px] md:w-[12px] lg:w-[21px] transition-all lg:hover:brightness-150"
